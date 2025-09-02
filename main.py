@@ -27,6 +27,28 @@ Summarizing daily or monthly spending
 
 """
 
+# def email_slicer(email):
+#     # Check if the email contains "@" and "." in the domain part
+#     if "@" in email and '.' in email.split('@')[1]:
+#         # Split the email into username and domain
+#         username, domain = email.split('@')
+#         return username, domain
+#     else:
+#         # Return None if the email format is invalid
+#         return None, None
+
+# # Get email input from the user
+# email = input("Enter your email address: ")
+# print(email.split('@')[1])
+
+# Call the function to slice the email
+# username, domain = email_slicer(email)
+
+# # Display the result
+# if username and domain:
+#     print(f"Username: {username}\nDomain: {domain}")
+# else:
+#     print("Invalid email format! Please enter a valid email.")
 
 
 
@@ -63,69 +85,79 @@ do list application, user input handling, list operations, and
 """
 
 #  To do list
-from pathlib import Path
-workspace = Path("To do")
-workspace.mkdir(exist_ok= True)
-text_file = workspace / "list.txt"
+# from pathlib import Path
+# workspace = Path("To do")
+# workspace.mkdir(exist_ok= True)
+# text_file = workspace / "list.txt"
 
 
-task_to_do = []
+# task_to_do = []
 
-def tasks_added(user_task):
-    task_to_do.append(user_task)
-    # with open(text_file, "w", encoding= "utf-8") as f:
-    #     writer = f.readlines()
-    #     tasks_added(f, writer, user_task)
+# def tasks_added(user_task):
+#     task_to_do.append(user_task)
+#     # with open(text_file, "w", encoding= "utf-8") as f:
+#     #     writer = f.readlines()
+#     #     tasks_added(f, writer, user_task)
         
-    print(f"{user_task} added successfully!\n")
+#     print(f"{user_task} added successfully!\n")
 
-def tasks_remove(user_task):
-    if user_task in task_to_do:
-        task_to_do.remove(user_task)
-        print(f"{user_task} successfully removed!\n")
+# def tasks_remove(user_task):
+#     if user_task in task_to_do:
+#         task_to_do.remove(user_task)
+#         print(f"{user_task} successfully removed!\n")
+#     else:
+#         print(f"Task {user_task} not found!")
+
+# def tasks_retrieve():
+#     if task_to_do:
+#         print("=" *20)
+#         for tasks_number, tasks in enumerate(task_to_do):
+#             print(f"{tasks_number + 1}: {tasks}")
+#     else:
+#         print("No Task found!")
+
+# def tasks_completed(user_choice):
+#     status_completed = {"Tasks": user_choice, "Status": "Completed"}
+#     status_completed["Tasks"] = user_choice
+#     print(f"{user_choice} has been marked completed!")
+#     print(status_completed)
+
+# while True:
+#     try:
+#         #  Options to select from
+#         print("1. Add task  2. Remove task  3. Retrieve task  4. Mark task as completed 0. Exit")
+#         choice = input("Kindly enter your choice: ")
+#         if choice == "1":
+#             user_task = input("Kindly enter the task to be added: ")
+#             tasks_added(user_task)
+#         elif choice == "2":
+#             user_task = input("Kindly enter the task to be removed: ")
+#             tasks_remove(user_task)
+#         elif choice == "3":
+#             print("\nThe list of your tasks is as follow: ")
+#             tasks_retrieve()
+#         elif choice == "4":
+#             user_choice = input("Kindly enter the task already completed: ")
+#             tasks_completed(user_choice)
+#         elif choice == "0":
+#             print("Exiting the program...")
+#             break
+#         else:
+#             print("Invalid choice. Try again!")
+#     except TypeError:
+#         print("A positional Argument occurred!")
+
+#     except KeyboardInterrupt:
+#         print("The program ended due to keyboard interrupt!")
+
+
+def slice_mail(email):
+    if "@" in email and "." in email.split("@")[1]:
+        print(f"Username: {email.split("@")[0]}")
+        print(f"Domain: {email.split("@")[1]}")
     else:
-        print(f"Task {user_task} not found!")
-
-def tasks_retrieve():
-    if task_to_do:
-        print("=" *20)
-        for tasks_number, tasks in enumerate(task_to_do):
-            print(f"{tasks_number + 1}: {tasks}")
-    else:
-        print("No Task found!")
-
-def tasks_completed(user_choice):
-    status_completed = {"Tasks": user_choice, "Status": "Completed"}
-    status_completed["Tasks"] = user_choice
-    print(f"{user_choice} has been marked completed!")
-    print(status_completed)
-
-while True:
-    try:
-        #  Options to select from
-        print("1. Add task  2. Remove task  3. Retrieve task  4. Mark task as completed 0. Exit")
-        choice = input("Kindly enter your choice: ")
-        if choice == "1":
-            user_task = input("Kindly enter the task to be added: ")
-            tasks_added(user_task)
-        elif choice == "2":
-            user_task = input("Kindly enter the task to be removed: ")
-            tasks_remove(user_task)
-        elif choice == "3":
-            print("\nThe list of your tasks is as follow: ")
-            tasks_retrieve()
-        elif choice == "4":
-            user_choice = input("Kindly enter the task already completed: ")
-            tasks_completed(user_choice)
-        elif choice == "0":
-            print("Exiting the program...")
-            break
-        else:
-            print("Invalid choice. Try again!")
-    except TypeError:
-        print("A positional Argument occurred!")
-
-    except KeyboardInterrupt:
-        print("The program ended due to keyboard interrupt!")
-
-
+        print("Invalid Email")
+        
+email = input("Enter the email: ")
+    
+slice_mail(email)
